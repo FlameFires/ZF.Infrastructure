@@ -18,6 +18,7 @@ string html = @"<!DOCTYPE html>
 var testModel = html.Mapper<TestModel>();
 Assert.NotNull(testModel);
 _testOutputHelper.WriteLine(testModel.h1);
+// Output: -
 
 public class TestModel
 {
