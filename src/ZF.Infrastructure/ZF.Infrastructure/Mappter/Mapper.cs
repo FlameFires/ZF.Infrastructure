@@ -7,6 +7,12 @@ public class Mapper
     public T Map<T>(string content) where T : class, new()
     {
         var obj = Activator.CreateInstance<T>();
+        return Map<T>(content, obj);
+    }
+    
+    public T Map<T>(string content, T source) where T : class, new()
+    {
+        var obj = source;
         var properties = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.GetProperty | BindingFlags.SetProperty);
         foreach (var property in properties)
         {

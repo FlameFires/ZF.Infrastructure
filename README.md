@@ -21,7 +21,6 @@ _testOutputHelper.WriteLine(testModel.h1);
 
 public class TestModel
 {
-    [XPath("//h1", "data-test", NodeReturnType = ReturnType.OuterHtml)]
     [ReQuery("data-test")]
     [ReSubstring("data", "test")]
     public string h1 { get; set; }
