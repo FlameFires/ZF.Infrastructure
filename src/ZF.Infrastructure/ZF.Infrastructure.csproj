@@ -10,7 +10,7 @@
         <RepositoryUrl>https://github.com/FlameFires/ZF.Infrastructure</RepositoryUrl>
         <PackageTags>Infrastructure, Regex, Mapper</PackageTags>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Version>1.0.2</Version>
+        <Version>1.0.3</Version>
         <TargetFramework>netstandard2.0</TargetFramework>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
