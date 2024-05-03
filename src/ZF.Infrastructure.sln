@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZF.Infrastructure", "ZF.Infrastructure\ZF.Infrastructure.csproj", "{71D66757-B319-4695-9C00-CCDDDDA6D515}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZF.Infrastructure.Test", "ZF.Infrastructure.Test\ZF.Infrastructure.Test.csproj", "{7445F149-A002-4327-B5B1-3A84EFE9C9B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{71D66757-B319-4695-9C00-CCDDDDA6D515}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71D66757-B319-4695-9C00-CCDDDDA6D515}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71D66757-B319-4695-9C00-CCDDDDA6D515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7445F149-A002-4327-B5B1-3A84EFE9C9B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7445F149-A002-4327-B5B1-3A84EFE9C9B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7445F149-A002-4327-B5B1-3A84EFE9C9B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7445F149-A002-4327-B5B1-3A84EFE9C9B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -2,7 +2,7 @@
 
 namespace ZF.Infrastructure;
 
-public class Mapper
+public class RegexMapper
 {
     public T Map<T>(string content) where T : class, new()
     {
@@ -17,7 +17,7 @@ public class Mapper
         foreach (var property in properties)
         {
             // Judge whether the property is an enumerable type
-            var isEnumerable = property.PropertyType.IsGenericType && property.PropertyType.IsAssignableTo(typeof(IEnumerable<string>));
+            var isEnumerable = property.PropertyType.IsGenericType && typeof(IEnumerable<string>).IsAssignableFrom(property.PropertyType);
             
             // Get all attributes of the property
             var propertyAttribute = property.GetCustomAttributes().ToArray();
@@ -49,7 +49,7 @@ public class Mapper
                         }
 
 
-                        if (!string.IsNullOrEmpty(regexStr))
+                        if (regexStr != null && !string.IsNullOrEmpty(regexStr))
                         {
                             switch (reQueryAttribute.Trim)
                             {
@@ -80,7 +80,7 @@ public class Mapper
                     {
                         IEnumerable<string>? regexList = RegexUtil.SubstringMultiple(content, startStr, endStr);
 
-                        if (regexList != null && reSubstringAttribute.DefaultValue != null && !regexList.Any() && reSubstringAttribute.DefaultValue.GetType().IsAssignableTo(property.PropertyType))
+                        if (regexList != null && reSubstringAttribute.DefaultValue != null && !regexList.Any() && property.PropertyType.IsInstanceOfType(reSubstringAttribute.DefaultValue))
                         {
                             regexList = reSubstringAttribute.DefaultValue as IEnumerable<string>;
                         }
@@ -110,10 +110,10 @@ public class Mapper
 
                         if (string.IsNullOrEmpty(regexStr) && !string.IsNullOrEmpty(reSubstringAttribute.DefaultValue?.ToString()))
                         {
-                            regexStr = reSubstringAttribute.DefaultValue.ToString();
+                            regexStr = reSubstringAttribute.DefaultValue?.ToString();
                         }
 
-                        if (!string.IsNullOrEmpty(regexStr))
+                        if (regexStr != null && !string.IsNullOrEmpty(regexStr))
                         {
                             switch (reSubstringAttribute.Trim)
                             {
